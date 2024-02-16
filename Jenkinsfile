@@ -1,9 +1,6 @@
 pipeline{
      agent any
-     environment {
-        SCANNER_HOME=tool 'sonarqube'
-    }
-
+     
     //  <!-- Git Checkout Stage -->
      stages{
         
