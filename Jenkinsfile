@@ -18,7 +18,10 @@ pipeline{
 
      stage('Sonar qube Analysis : SonarQube'){
             steps{
-                sh 'mvn clean package sonar:sonar'
+               def mvn = tool 'Default Maven';
+               withSonarQubeEnv() {
+               sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=netflix"
+                }
             }
         }
 
