@@ -1,7 +1,7 @@
 pipeline{
      agent any
 
-     <!-- Git Checkout Stage -->
+    //  <!-- Git Checkout Stage -->
      stages{
         stage('Git Checkout : GIT'){
             steps{
