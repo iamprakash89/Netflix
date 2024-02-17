@@ -33,6 +33,17 @@ pipeline{
             }
         }
 
-        
+      stage("Quality Gate : SonarQube "){
+            steps{
+               waitForQualityGate abortPipeline: false, credentialsId: 'sonarqube-api'
+            }
+        }
+
+      stage ("Install dependencies; npm"){
+        steps{
+            sh "npm install"
+        }
+      }
+
      } 
 }
