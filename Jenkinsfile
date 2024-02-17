@@ -24,13 +24,15 @@ pipeline{
             }
         }
 
-     stage('Sonar qube Analysis : SonarQube'){
+     stage("Sonarqube Analysis : SonarQube "){
             steps{
-               
-                sh "echo hello"
-               
+                withSonarQubeEnv('sonarqube') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Netflix \
+                    -Dsonar.projectKey=Netflix '''
+                }
             }
         }
 
+        
      } 
 }
