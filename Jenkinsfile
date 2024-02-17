@@ -44,6 +44,11 @@ pipeline{
             sh "npm install"
         }
       }
+      stage ("audit packages: npm"){
+        steps{
+            sh "npm audit"
+        }
+      }
 
      } 
 }
