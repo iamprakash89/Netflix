@@ -86,7 +86,7 @@ pipeline{
                 sh 'docker run -d --name netflix -p 8081:80 devopskvk/netflix:latest'
             }
         }
-
+        // Deploy ECR container images
 
      } 
 }
